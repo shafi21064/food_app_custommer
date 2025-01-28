@@ -28,7 +28,7 @@ class CategoryWiseRestaurants extends GetxController {
       if (response != null && response.statusCode == 200) {
         categoryWiseRestaurantsLoader = false;
         final jsonResponse = json.decode(response.body);
-        print(jsonResponse);
+        print('getAllRestaurantsByCategory $jsonResponse');
         var categoryWiseRestaurantData =
             RestaurantByCategoryData.fromJson(jsonResponse['data']);
         print(jsonResponse);

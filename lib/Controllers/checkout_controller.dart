@@ -36,7 +36,7 @@ class CheckoutController extends GetxController {
     server.getRequest(endPoint: APIList.profile).then((response) {
       if (response != null && response.statusCode == 200) {
         final jsonResponse = json.decode(response.body);
-        print(jsonResponse);
+        print('getUserProfile $jsonResponse');
         var profileData = Profile.fromJson(jsonResponse);
         name = profileData.data!.data!.name;
         email = profileData.data!.data!.email;

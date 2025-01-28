@@ -31,6 +31,7 @@ class OrderCancelController extends GetxController {
         .then((response) {
       if (response != null && response.statusCode == 200) {
         final jsonResponse = json.decode(response.body);
+        print('cancel order $jsonResponse');
         var cancelOrderData = OrderCancel.fromJson(jsonResponse);
         message = cancelOrderData.message;
       }

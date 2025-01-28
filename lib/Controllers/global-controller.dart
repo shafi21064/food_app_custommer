@@ -110,6 +110,7 @@ class GlobalController extends GetxController {
       print(jsonResponse);
       if (response != null && response.statusCode == 200) {
         final jsonResponse = json.decode(response.body);
+        print('siteSettings $jsonResponse');
         var settingData = SettingData.fromJson(jsonResponse['data']);
         paystacKey = settingData.paystacKey;
         razorpayKey = settingData.razorpayKey;

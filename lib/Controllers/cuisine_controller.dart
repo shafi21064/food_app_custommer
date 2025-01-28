@@ -26,6 +26,7 @@ class CuisineController extends GetxController {
         cuisineLoader = false;
         final jsonResponse = json.decode(response.body);
         var cuisineData = CuisineData.fromJson(jsonResponse['data']);
+        print('getAllCuisine $jsonResponse');
         cuisineList = <CuisineDataModel>[];
         cuisineList.addAll(cuisineData.cuisineList!);
         Future.delayed(Duration(milliseconds: 10), () {

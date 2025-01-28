@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ex/views/cart.dart';
 import '/utils/theme_colors.dart';
 import '/views/orders_List.dart';
 import '/views/profile_page.dart';
@@ -18,7 +19,7 @@ class _HomePageState extends State<MainScreen> {
   String page = 'Home';
   @override
   void initState() {
-    super.initState();
+    super.initState();  
   }
 
   @override
@@ -45,9 +46,9 @@ class _HomePageState extends State<MainScreen> {
               icon: Icons.sticky_note_2_sharp,
               title: 'ORDERS'.tr),
           PandaBarButtonData(
-              id: 'Reservations',
-              icon: Icons.event_note,
-              title: "RESERVATIONS".tr),
+              id: 'Cart',
+              icon: Icons.shopping_cart,
+              title: "CART".tr),
           PandaBarButtonData(
               id: 'Profile', icon: Icons.person, title: 'PROFILE'.tr),
         ],
@@ -68,8 +69,8 @@ class _HomePageState extends State<MainScreen> {
               return OrderList();
             case 'Profile':
               return ProfilePage();
-            case 'Reservations':
-              return TableReservations();
+            case 'Cart':
+              return CartPage();
             default:
               return HomePage();
           }

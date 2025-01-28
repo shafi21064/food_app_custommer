@@ -29,6 +29,7 @@ class MenuItemController extends GetxController {
     server.getRequestWithParamMenuItems(menuItemId: id).then((response) {
       if (response != null && response.statusCode == 200) {
         final jsonResponse = json.decode(response.body);
+        print('menu item $jsonResponse');
         var menuItemData = MenuItemData.fromJson(jsonResponse["data"]);
         variationList = <Variations>[];
         variationList.addAll(menuItemData.data!.variations!);

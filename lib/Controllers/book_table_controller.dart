@@ -43,6 +43,7 @@ class BookTableController extends GetxController {
       if (response != null && response.statusCode == 200) {
         profileLoader = false;
         final jsonResponse = json.decode(response.body);
+        print('getUserProfile $jsonResponse');
         var profileData = Profile.fromJson(jsonResponse);
         name = profileData.data!.data!.name;
         email = profileData.data!.data!.email;

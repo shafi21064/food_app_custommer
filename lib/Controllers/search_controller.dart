@@ -29,7 +29,7 @@ class SearchController extends GetxController {
         .getRequestParam(endPoint: APIList.search, body: queryParameters)
         .then((response) {
           print('get search result api ${APIList.search}');
-      print(response);
+      print('search result $response');
       if (response != null && response.statusCode == 200) {
         searchLoader = false;
         final jsonResponse = json.decode(response.body);

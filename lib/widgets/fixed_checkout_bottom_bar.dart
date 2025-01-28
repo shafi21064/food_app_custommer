@@ -53,7 +53,7 @@ class _CheckoutBottomBarState extends State<CheckoutBottomBar> {
                 ),
               ),
               //SizedBox(height: 5,),
-              if (cartController.pickMethod == 0)
+              // if (cartController.pickMethod == 0)
                 Padding(
                   padding: const EdgeInsets.only(bottom: 8.0),
                   child: Row(
@@ -69,7 +69,7 @@ class _CheckoutBottomBarState extends State<CheckoutBottomBar> {
                           child: Text(
                         cert.cart.length == 0
                             ? "${Get.find<GlobalController>().currencyCode!}0.0"
-                            : "${Get.find<GlobalController>().currencyCode!}${cert.distanceDeliveryCharge}",
+                            : cartController.pickMethod == 0 ? "${Get.find<GlobalController>().currencyCode!}${cert.distanceDeliveryCharge}" : "0",
                         style: TextStyle(
                           fontSize: 16,
                         ),

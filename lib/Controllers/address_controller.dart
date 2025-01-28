@@ -38,7 +38,7 @@ class AddressController extends GetxController {
     server.getRequest(endPoint: APIList.address).then((response) {
       if (response != null && response.statusCode == 200) {
         final jsonResponse = json.decode(response.body);
-        print("==========>");
+        print("address $jsonResponse");
 
         var addressData = AddressModel.fromJson(jsonResponse);
         address = <AddressData>[];
@@ -53,13 +53,13 @@ class AddressController extends GetxController {
 
   getAddressLabelValue() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    addressLabelName = prefs.getString('addressLabel')!;
-    addressName = prefs.getString('address')!;
-    addressLat = prefs.getString('addressLate')!;
-    addressLong = prefs.getString('addressLong')!;
-    addressCurrentLat = prefs.getString('addressCurrentLat')!;
-    addressCurrentLong = prefs.getString('addressCurrentLong')!;
-    addressCurrent = prefs.getString('addressCurrent')!;
+    addressLabelName = prefs.getString('addressLabel')??'';
+    addressName = prefs.getString('address') ?? '';
+    addressLat = prefs.getString('addressLate') ?? '';
+    addressLong = prefs.getString('addressLong') ?? '';
+    addressCurrentLat = prefs.getString('addressCurrentLat') ?? '';
+    addressCurrentLong = prefs.getString('addressCurrentLong') ?? '';
+    addressCurrent = prefs.getString('addressCurrent') ?? '';
     update();
   }
 

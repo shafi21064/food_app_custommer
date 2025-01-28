@@ -23,6 +23,7 @@ class CategoryController extends GetxController {
     server.getRequest(endPoint: APIList.category).then((response) {
       if (response != null && response.statusCode == 200) {
         final jsonResponse = json.decode(response.body);
+        print('get all category $jsonResponse');
         var categoryData = CategoryData.fromJson(jsonResponse['data']);
         categoriesList = <CategoryDataModel>[];
         print(categoryData.categoriesList);

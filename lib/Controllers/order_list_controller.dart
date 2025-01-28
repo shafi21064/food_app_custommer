@@ -26,6 +26,7 @@ class OrderListController extends GetxController {
       print(response);
       if (response != null && response.statusCode == 200) {
         final jsonResponse = json.decode(response.body);
+        print('get order list $jsonResponse');
         var orderData = OrderList.fromJson(jsonResponse);
         orderList = <Datum>[];
         orderList.addAll(orderData.data!);

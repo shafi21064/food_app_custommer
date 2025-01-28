@@ -109,6 +109,7 @@ class AuthController extends GetxController {
         print(response.statusCode);
         if (response != null && response.statusCode == 200) {
           final jsonResponse = json.decode(response.body);
+          print('refresh token $jsonResponse');
           var refreshData = RefreshToken.fromJson(jsonResponse);
           print(refreshData);
           var newToken = 'Bearer ' + "${refreshData.token}";

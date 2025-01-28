@@ -45,6 +45,7 @@ class OrderDetailsController extends GetxController {
       if (response != null && response.statusCode == 200) {
         orderDetailsDataLoader = false;
         final jsonResponse = json.decode(response.body);
+        print('get order details $jsonResponse');
         var orderDetailsData = OrderDetailsData.fromJson(jsonResponse['data']);
         itemList = <Item>[];
         itemList.addAll(orderDetailsData.data!.items!);
@@ -82,6 +83,7 @@ class OrderDetailsController extends GetxController {
         .getRequest(endPoint: APIList.orderCancel! + id.toString())
         .then((response) {
       if (response != null && response.statusCode == 200) {
+        print('cancelOrder $response');
         onInit();
       }
     });

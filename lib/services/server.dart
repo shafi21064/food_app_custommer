@@ -12,10 +12,12 @@ class Server {
   getRequest({String? endPoint}) async {
     HttpClient client = HttpClient();
     try {
-      client.badCertificateCallback =
-          ((X509Certificate cert, String host, int port) => true);
+      // client.badCertificateCallback =
+      //     ((X509Certificate cert, String host, int port) => true);
+      print('api end point ${APIList.server! + endPoint!}');
       return await http.get(Uri.parse(APIList.server! + endPoint!),
           headers: _getHttpHeaders());
+
     } catch (error) {
       return null;
     } finally {
@@ -26,6 +28,7 @@ class Server {
   getRequestSettings(endPoint) async {
     HttpClient client = HttpClient();
     try {
+      print('api end point ${APIList.server! + endPoint!}');
       return await http.get(Uri.parse(APIList.server! + endPoint!),
           headers: getAuthHeaders());
     } catch (error) {
@@ -38,8 +41,9 @@ class Server {
   getRequestWithParam({String? endPoint, var categoryId}) async {
     HttpClient client = HttpClient();
     try {
-      client.badCertificateCallback =
-          ((X509Certificate cert, String host, int port) => true);
+      // client.badCertificateCallback =
+      //     ((X509Certificate cert, String host, int port) => true);
+      print('api end point ${APIList.server! + "category/$categoryId/show"}');
       return await http.get(
           Uri.parse(APIList.server! + "category/$categoryId/show"),
           headers: _getHttpHeaders());
@@ -53,8 +57,9 @@ class Server {
   getRequestWithParamCuisine({String? endPoint, var cuisineId}) async {
     HttpClient client = HttpClient();
     try {
-      client.badCertificateCallback =
-          ((X509Certificate cert, String host, int port) => true);
+      // client.badCertificateCallback =
+      //     ((X509Certificate cert, String host, int port) => true);
+      print('api end point ${APIList.server! + "cuisine/$cuisineId/show"}');
       return await http.get(
           Uri.parse(APIList.server! + "cuisine/$cuisineId/show"),
           headers: _getHttpHeaders());
@@ -68,8 +73,9 @@ class Server {
   getRequestWithParamOrders({String? endPoint, var orderId}) async {
     HttpClient client = HttpClient();
     try {
-      client.badCertificateCallback =
-          ((X509Certificate cert, String host, int port) => true);
+      // client.badCertificateCallback =
+      //     ((X509Certificate cert, String host, int port) => true);
+      print('api end point ${APIList.server! + "orders/$orderId/show"}');
       return await http.get(Uri.parse(APIList.server! + "orders/$orderId/show"),
           headers: _getHttpHeaders());
     } catch (error) {
@@ -82,8 +88,10 @@ class Server {
   getRequestWithParamMenuItems({String? endPoint, var menuItemId}) async {
     HttpClient client = HttpClient();
     try {
-      client.badCertificateCallback =
-          ((X509Certificate cert, String host, int port) => true);
+      // client.badCertificateCallback =
+      //     ((X509Certificate cert, String host, int port) => true);
+      print('api end point ${APIList.server! +
+          "restaurant-menuItem/menuItem/$menuItemId/show"}');
       return await http.get(
           Uri.parse(APIList.server! +
               "restaurant-menuItem/menuItem/$menuItemId/show"),
@@ -100,8 +108,9 @@ class Server {
     print(body);
     HttpClient client = HttpClient();
     try {
-      client.badCertificateCallback =
-          ((X509Certificate cert, String host, int port) => true);
+      // client.badCertificateCallback =
+      //     ((X509Certificate cert, String host, int port) => true);
+      print('api end point ${APIList.server! + endPoint!}');
       return await http.post(Uri.parse(APIList.server! + endPoint),
           headers: getAuthHeaders(), body: body);
     } catch (error) {
@@ -114,8 +123,9 @@ class Server {
   postRequestWithToken({String? endPoint, String? body}) async {
     HttpClient client = HttpClient();
     try {
-      client.badCertificateCallback =
-          ((X509Certificate cert, String host, int port) => true);
+      // client.badCertificateCallback =
+      //     ((X509Certificate cert, String host, int port) => true);
+      print('api end point ${APIList.server! + endPoint!}');
       return await http.post(Uri.parse(APIList.server! + endPoint!),
           headers: _getHttpHeaders(), body: body);
     } catch (error) {
@@ -128,8 +138,9 @@ class Server {
   putRequest({String? endPoint, String? body}) async {
     HttpClient client = HttpClient();
     try {
-      client.badCertificateCallback =
-          ((X509Certificate cert, String host, int port) => true);
+      // client.badCertificateCallback =
+      //     ((X509Certificate cert, String host, int port) => true);
+      print('api end point ${APIList.server! + endPoint!}');
       return await http.put(Uri.parse(APIList.server! + endPoint!),
           headers: _getHttpHeaders(), body: body);
     } catch (error) {
@@ -148,6 +159,7 @@ class Server {
     try {
       var request;
       if (type) {
+        print('api end point ${APIList.server! + endPoint!}');
         request = http.MultipartRequest(
             'POST', Uri.parse(APIList.server! + endPoint!))
           ..fields.addAll(body)
@@ -184,8 +196,8 @@ class Server {
   deleteRequest({String? endPoint}) async {
     HttpClient client = HttpClient();
     try {
-      client.badCertificateCallback =
-          ((X509Certificate cert, String host, int port) => true);
+      // client.badCertificateCallback =
+      //     ((X509Certificate cert, String host, int port) => true);
       return await http.delete(Uri.parse(APIList.server! + endPoint!),
           headers: _getHttpHeaders());
     } catch (error) {

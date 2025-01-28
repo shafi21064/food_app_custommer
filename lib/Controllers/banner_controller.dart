@@ -22,6 +22,7 @@ class BannerController extends GetxController {
       if (response != null && response.statusCode == 200) {
         bannerLoader = false;
         final jsonResponse = json.decode(response.body);
+        print('get banners $jsonResponse');
         var bannerData = Data.fromJson(jsonResponse['data']);
         bannerList = <BannerData>[];
         bannerList.addAll(bannerData.data!);

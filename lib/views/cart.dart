@@ -33,7 +33,10 @@ class _CartPageState extends State<CartPage> {
         builder: (cert) => Scaffold(
             bottomNavigationBar: cert.cart.isEmpty
                 ? Container(height: mainHeight / 4)
-                : CheckoutBottomBar(),
+                : Padding(
+                  padding: EdgeInsets.only(bottom: MediaQuery.viewPaddingOf(context).top + 20),
+                  child: CheckoutBottomBar(),
+                ),
             appBar: AppBar(
               title: Text(
                 "CART".tr,
@@ -45,14 +48,14 @@ class _CartPageState extends State<CartPage> {
               backgroundColor: ThemeColors.baseThemeColor,
               centerTitle: true,
               elevation: 0.0,
-              leading: IconButton(
-                  onPressed: () {
-                    Get.back();
-                  },
-                  icon: Icon(
-                    Icons.arrow_back_ios,
-                    color: Colors.white,
-                  )),
+              // leading: IconButton(
+              //     onPressed: () {
+              //       Get.back();
+              //     },
+              //     icon: Icon(
+              //       Icons.arrow_back_ios,
+              //       color: Colors.white,
+              //     )),
             ),
             body: Column(
               children: [
