@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.artics.chefbangla.app-mergeDebugResources-109:/values-ldpi-v4/values-ldpi-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\SHAFI\\.gradle\\caches\\transforms-3\\6e7dac24aad41177a80ad03bf9f93067\\transformed\\jetified-payments-core-20.52.2\\res\\values-ldpi-v4\\values-ldpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "63",
+                        "endOffsets": "114"
+                    }
+                }
+            ]
+        }
+    ]
+}

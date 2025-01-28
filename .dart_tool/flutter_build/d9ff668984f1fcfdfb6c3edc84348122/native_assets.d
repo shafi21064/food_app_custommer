@@ -1,0 +1,1 @@
+ E:\\rana_vai\\foodbank-customer-app\\.dart_tool\\flutter_build\\d9ff668984f1fcfdfb6c3edc84348122\\native_assets.yaml: 

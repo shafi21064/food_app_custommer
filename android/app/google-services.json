@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "948749973889",
+    "project_id": "chefbangla-c6523",
+    "storage_bucket": "chefbangla-c6523.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948749973889:android:4a0d7e2455a120a0f31080",
+        "android_client_info": {
+          "package_name": "com.artics.chefbangla"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnDKEXZnS6aiMrf-5m675eq7gRtTAR9k4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
